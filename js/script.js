@@ -41,26 +41,40 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 next.addEventListener('click', function(){
-    if(items[itemActive]){
+    //verifico l'elemento attivo (itemActive)
+
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+        //incremento il suo valore di 1
         itemActive++;
+
+        //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
+        //stessa cosa per i cerchi
         items[itemActive].classList.add('active');
-        console.log(items[itemActive]);
-    };
+        circles[itemActive].classList.add('active');
+        console.log(itemActive);
+    
     
     
 
-    //verifico l'elemento attivo (itemActive)
-    //incremento il suo valore di 1
-    //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
-    //stessa cosa per i cerchi
 });
 
 prev.addEventListener('click', function(){
-
+    
     //verifico l'elemento attivo (itemActive)
-    //decremento il suo valore di 1
-    //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
-    //stessa cosa per i cerchi
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+        //decremento il suo valore di 1
+        itemActive--;
+
+        items[itemActive].classList.add('active');
+        
+         //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
+         //stessa cosa per i cerchi
+        circles[itemActive].classList.add('active');
+        console.log(itemActive);
 })
 
 
