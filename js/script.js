@@ -55,11 +55,15 @@ next.addEventListener('click', function(){
           circles[itemActive].classList.add('active');
           console.log(itemActive);
 
-          prev.classList.remove('hidden');
-          if(itemActive === items.length -1){
-              
-              next.classList.add('hidden');
-          };
+          
+     }else{
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+        itemActive = 0;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
      };
 
 
@@ -82,10 +86,15 @@ prev.addEventListener('click', function(){
             circles[itemActive].classList.add('active');
             console.log(itemActive);
 
-            next.classList.remove('hidden');
-            if(itemActive === 0){
-                prev.classList.add('hidden');
-            };
+            
+    } else{
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+        itemActive = items.length -1;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
     }
 });
 
